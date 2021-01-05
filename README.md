@@ -1,3 +1,26 @@
+# EB Garamond Lettrines
+
+See below the original README as received from Georg Duffners repository from which I forked this one. I've only worked on the Initials/Lettrine font(s). For the actual EB Garamond text font I would nowadays refer to the variable font prepared by ????.
+
+I've therefore removed everything from the repository except the Lettrine font files. When I started to work on the font I used the software Glyphs with a 30-day-trial. The result of this can be found in the file `EBGaramondLettrines.glyphs`. After the trial period ended I switched to Font Forge via the 'EB `Garamond Lettrines-Regular.ufo` file which I exported from Glyphs. The Font Forge data is saved in `EBGaramondLettrines.sfd`. The latest `.otf` file is exported from this `.sfd` file with Font Forge.
+
+## Font Changes
+
+I worked - as stated above - only on the Lettrine font. I've added more letters to the font which I needed in one of my projects where I made use of the EB Garamond Initials. I've also revisited some of the already available lettrines to adapt them to my taste (I wanted the ornaments to look smoother).
+
+Georg Duffner providede a set of three files:
+
+1. Lettrine (Ornament plus Letter)
+2. Only Ornament
+3. Only Letter
+
+I've put all three fonts into one single Open Type Font. The ornament-only and the letter-only are available as Stylistic Styles:
+
+- Stylistic Style #1 (+ss01): Ornament only
+- Stylistic Style #2 (+ss02): Letter only
+
+The repository contains a Glyph.pdf. This document also describes my changes and contains a full Glyph List.
+
 # EB Garamond
 *Claude Garamont’s designs go open source*
 

@@ -1,0 +1,115 @@
+\documentclass[fontsize=12pt, parskip=full]{scrartcl}
+
+\usepackage{fontspec}
+\usepackage{longtable}
+
+\setmainfont{EBGaramond}[
+    Path = /Users/oestreich/Library/Fonts/,
+    Extension = .otf,
+    UprightFont = *-Regular,
+    BoldFont = *-SemiBold,
+    ItalicFont = *-Regular,
+    BoldItalicFont = *-SemiBold,
+    Ligatures = {TeX,Common,Rare},
+    Numbers = OldStyle,
+    StylisticSet = 8]
+
+\setsansfont{AlegreyaSans}[
+    Extension = .otf,
+    UprightFont = *-Regular,
+    BoldFont = *-Medium,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-MediumItalic,
+    Ligatures = Common,
+    Numbers = Lining]
+
+\newfontface\lettrinefont{EB Garamond Lettrines}
+\usepackage{microtype}
+\usepackage{xcolor-material}
+
+\setkomafont{disposition}{\rmfamily}
+\addtokomafont{section}{\rmfamily}
+
+\newcommand{\veryhuge}{\fontsize{56pt}{56pt}}
+\newcommand{\full}[1]{\veryhuge\lettrinefont#1}
+\newcommand{\bg}[1]{\veryhuge\lettrinefont\addfontfeatures{RawFeature=+ss01}#1}
+\newcommand{\fg}[1]{\veryhuge\lettrinefont\addfontfeatures{RawFeature=+ss02}#1}
+
+\newcommand{\sample}[1]{%
+        \veryhuge\lettrinefont \textcolor{MaterialGrey500}{\addfontfeatures{RawFeature=+ss01}#1}%
+        \llap{\textcolor{MaterialGrey700}{\addfontfeatures{RawFeature=+ss02}#1}}%
+}
+
+\newcommand{\row}[2]{ \full{#1} & \bg{#1} & \fg{#1} & \sample{#1} & #2\\[32pt] }
+
+\begin{document}
+
+    \title{EB Garamond Lettrines}
+    \subtitle{Project Description and Glyph Table}
+    \author{Tilmann Oestreich}
+    \maketitle
+
+    \section*{Introduction}
+
+    Georg Duffner started to provide a free version of the Garamond types, based on the Designs of the Berner specimen from 1592. His work also included Lettrines based on those found in a 16th century french bible print. Unfortunately, he only prepared about eight letters as lettrines. As I started to make use of these lettrines I soon needed some of the letters missing in Georg Duffners font. Therefore I forked his repository and started to add more letters to this font. Fortunately, Georg's repository contained a workbench font file which contained at least a raw shape for all letters for which a template from the french bible print was available. I started my work at this point to add more letters to the font. I've also revisited lettrines already prepared by Georg Duffner and made the shapes of some of them much smoother than they were prepared by him.
+
+    Sadly, some letters are not found as lettrines in the 16th century bible print. These letters are: J, K, U, W, X, Y and Z. For these only placeholders of appropriate size are included in the font. Here some genuine design work would be required.
+
+    The initial work of Georg Duffner can be found here: https://github.com/georgd/EB-Garamond
+
+    \section*{Font Structure}
+
+    The font includes only the latin capital letters A to Z.
+
+    Georg orignally prepared three font files. One included the full lettrine, i.e. letter plus ornament. Additionally, he provided two further files. One included only the ornament, the second only the letter. With these two additional files a two-colored lettrine could be realized.
+
+    I'm using the lettrines with a \LaTeX project making heavy use of the package \texttt{fontspec}. Therefore I changed the font to an Open Type Font (\texttt{.otf}) and incorporated the back- and foreground as Stylistic Sets.
+
+    For the letter T Georg Duffner had prepared two versions for the ornament. The letter itself is identical in both versions. The alternative T-lettrine can be accessed via the Open Type feature Character Variant \#2 (+cv02). The Glyph table below shows both versions.
+
+    The font is now organised as follows:
+
+    \begin{longtable}{lll}
+        »Normal« Capital Letter & --- & Lettrine (Ornament and Letter)\\
+        Stylistic Set \#1 & +ss01 & Background / Ornament \\
+        Stylistic Set \#2 & +ss02 & Foreground / Only Letter \\
+        Character Variant \#2 & +cv02 & Alternative »T« \\
+    \end{longtable}
+
+    \section*{Glyph Overview}
+
+    \begin{longtable}[]{ccccp{3.5cm}}
+        Lettrine & Background/ & Foreground/ & Two-colored & Status\\
+                 & Ornament    & Letter      & Example     & \\[8pt]
+        \endhead
+
+        \row{A}{Done}
+        \row{B}{Raw}
+        \row{C}{Raw}
+        \row{D}{Done}
+        \row{E}{Bug in Lettrine, Position of letter wrong}
+        \row{F}{Done}
+        \row{G}{Done, position of letter not optimal}
+        \row{H}{Done}
+        \row{I}{Done}
+        \row{J}{Missing in Original}
+        \row{K}{Missing in Original}
+        \row{L}{Done}
+        \row{M}{Done}
+        \row{N}{Done}
+        \row{O}{Done}
+        \row{P}{Raw}
+        \row{Q}{Done}
+        \row{R}{Raw}
+        \row{S}{Done}
+        \row{T}{Done}
+        \row{\addfontfeatures{RawFeature=+cv02}T}{+cv02, Done}
+        \row{U}{Missing in Original}
+        \row{V}{Raw}
+        \row{W}{Missing in Original}
+        \row{X}{Missing in Original}
+        \row{Y}{Missing in Original}
+        \row{Z}{Missing in Original}
+    \end{longtable}
+
+\end{document}

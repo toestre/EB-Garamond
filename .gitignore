@@ -8,9 +8,9 @@
 *.tuc
 *Glyphs.pdf
 *.ttf
-*.otf
 *.eot
 *.woff
 *tests.pdf
 *.jar
 patches
+.DS_Store

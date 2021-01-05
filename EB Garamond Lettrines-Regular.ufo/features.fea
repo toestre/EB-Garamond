@@ -1,0 +1,63 @@
+# automatic
+@AllLetters = [ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z L.01 T.02 T.02.bg A.bg D.bg E.bg F.bg G.bg H.bg I.bg L.bg M.bg N.bg O.bg Q.bg S.bg T.bg A.fg D.fg E.fg F.fg G.fg H.fg I.fg K.fg L.fg M.fg N.fg O.fg Q.fg S.fg T.fg U.fg W.fg Y.fg Z.fg C.tenline I.threeline ];
+
+# Prefix: Prefix
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+
+@GDEF_Simple = [\P \M \N \R \B \A \C \I \T \E \L \V \W \G \F \J \D \Q \S \O \H \U \Y \K \X \Z \L.01 \T.02
+	\I.threeline \C.tenline];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, , , ;
+
+} GDEF;
+
+# Prefix: Languagesystems
+# automatic
+languagesystem DFLT dflt;
+
+feature aalt {
+# automatic
+feature ss01;
+feature ss02;
+feature cv02;
+} aalt;
+
+feature ss01 {
+sub A by A.bg;
+sub D by D.bg;
+sub E by E.bg;
+sub F by F.bg;
+sub G by G.bg;
+sub H by H.bg;
+sub I by I.bg;
+sub L by L.bg;
+sub M by M.bg;
+sub N by N.bg;
+sub O by O.bg;
+sub Q by Q.bg;
+sub S by S.bg;
+sub T by T.bg;
+} ss01;
+
+feature ss02 {
+sub A by A.fg;
+sub E by E.fg;
+sub F by F.fg;
+sub G by G.fg;
+sub H by H.fg;
+sub I by I.fg;
+sub L by L.fg;
+sub M by M.fg;
+sub N by N.fg;
+sub O by O.fg;
+sub Q by Q.fg;
+sub S by S.fg;
+sub T by T.fg;
+} ss02;
+
+feature cv02 {
+sub T by T.02.bg;
+sub T.bg by T.02.bg;
+} cv02;
+
