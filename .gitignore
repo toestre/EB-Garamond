@@ -6,7 +6,6 @@
 *.synctex.gz
 *.pyc
 *.tuc
-*Glyphs.pdf
 *.ttf
 *.eot
 *.woff
